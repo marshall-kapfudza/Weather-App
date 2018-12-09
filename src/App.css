@@ -20,7 +20,7 @@ h4 {
 }
 
 .local__temp--title {
-  display: inline-flex;
+  display: inline-grid;
   font-size: 30px;
 }
 
