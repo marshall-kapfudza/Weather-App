@@ -20,10 +20,9 @@ class App extends Component {
     };
   }
   
-
   componentDidMount() {
     const yourAppId = 'OPEN_WEATHER_APP_ID';
-    const data = `https://api.openweathermap.org/data/2.5/weather?zip=90210,us&appid=${yourAppId}`;
+    const data = `https://api.openweathermap.org/data/2.5/weather?zip=98115,us&appid=${yourAppId}`;
     fetch(data)
     .then(res => res.json())
     .then(json => {
@@ -37,16 +36,12 @@ class App extends Component {
 
   render() {
     var { isLoaded, items } = this.state;
-
-
+    
     if(!isLoaded) {
       return <div>Loading...</div>;
     }
     else {
       var mapIcon = `http://openweathermap.org/img/w/${items.weather[0].icon}.png`;
-
-      console.log(this.state.windSpeed(items.wind.speed));
-      
       return (
         <div className="App">
           <h1 className="txt-center">{items.name}</h1>
